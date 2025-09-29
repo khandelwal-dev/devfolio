@@ -1,0 +1,87 @@
+---
+title: "Stop Rebuilding UI — Use ShadCN Instead"
+summary: "Why reinvent the wheel? Use ShadCN UI to move faster, write less boilerplate, and still ship beautiful, accessible components."
+image: "/images/blogs/shadcnui.jpg"
+publishedAt: "2025-09-29"
+tag: "UI/UX"
+---
+
+## Smart UI development in 2025
+
+In modern web development, speed and consistency are everything. If you're still **building every button, modal, or dropdown from scratch**, you’re spending time on problems that are already solved. That’s where **ShadCN UI** comes in — a component collection built with **Radix UI** and styled using **Tailwind CSS**, designed to let you focus on building features, not components.
+
+## What is ShadCN UI?
+
+[ShadCN UI](https://ui.shadcn.dev/) is **not a traditional component library** — it’s a collection of copy-pasteable components that live _in your codebase_. This gives you full control over styles, behavior, and accessibility — without starting from scratch.
+
+### Key features
+
+- Fully **customizable** components
+- Based on **Radix UI primitives** (great accessibility)
+- Styled with **Tailwind CSS**
+- You own the code — no library lock-in
+
+## Why use ShadCN instead of building everything?
+
+Let’s compare two approaches:
+
+<CodeBlock
+  marginBottom="16"
+  codes={[
+    {
+      code:
+`// Building a modal manually
+<div className="fixed inset-0 z-50">
+  <div className="bg-white p-6 rounded shadow-lg">
+    <h2>Title</h2>
+    <p>Modal content</p>
+  </div>
+</div>`,
+      language: "tsx",
+      label: "Manual Modal"
+    },
+    {
+      code:
+`// Using ShadCN Dialog
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+    <h2>Title</h2>
+    <p>Modal content</p>
+  </DialogContent>
+</Dialog>
+`, language: "tsx", label: "ShadCN Modal" } ]} />
+
+### Pros of using ShadCN:
+
+- 🧠 **Smarter**: Skip the accessibility and focus traps — it's already done
+- 🧱 **Consistent**: Every component follows the same design system
+- 🚀 **Faster**: Add a modal, dropdown, or toast in seconds
+- 🧩 **Composable**: Works with your Tailwind setup out of the box
+
+## Getting started with ShadCN UI
+
+1. Make sure you have Tailwind + Radix UI setup.
+2. Run the install command:
+   ```bash
+   npx shadcn-ui@latest init
+   ```
+3. Use the CLI to add components:
+   ```bash
+   npx shadcn-ui@latest add button
+   ```
+
+Now you're ready to use `<Button />`, `<Dialog />`, `<Popover />`, and more.
+
+## The smarter way to build UIs
+
+In 2025, productivity is the name of the game. If a tool gives you well-designed, accessible, customizable UI components out of the box — and still keeps your codebase clean — it’s a win.
+ShadCN UI isn’t about shortcuts. It’s about working smart, not hard.
+
+**Resources:**
+
+- [ShadCN UI Website](https://ui.shadcn.dev)
+- [Radix UI Primitives](https://www.radix-ui.com/)
+- [Tailwind CSS](https://tailwindcss.com/)

@@ -1,0 +1,96 @@
+---
+title: "What is Reverse Engineering?"
+summary: "Reverse engineering is the process of deconstructing software or hardware to understand how it works — a powerful skill in cybersecurity, development, and research."
+image: "/images/blogs/reverse.jpg"
+publishedAt: "2025-09-29"
+tag: "Cybersecurity"
+---
+
+## What is Reverse Engineering?
+
+**Reverse engineering** is the process of analyzing a system — software, hardware, or even protocols — to understand its design, architecture, or functionality. Instead of starting with the source code or blueprint, you work backwards from a finished product.
+
+It's used across a wide range of fields: **cybersecurity**, **software development**, **malware analysis**, and even **competitive product research**.
+
+## Why is it important?
+
+Reverse engineering can help you:
+
+- Discover how a program or device works internally
+- Recover lost source code from compiled binaries
+- Find and fix security vulnerabilities
+- Understand malware behavior
+- Analyze competitor software or legacy systems
+
+## Real-world examples
+
+### 🛡 Malware Analysis
+
+Cybersecurity researchers reverse-engineer malicious programs to understand how they infect systems, what data they target, and how they spread.
+
+### 🔍 Binary Inspection
+
+Developers often reverse-engineer closed-source applications to find bugs or implement compatibility features.
+
+### 🧠 Legacy Systems
+
+In enterprise environments, outdated systems may lack source code. Engineers reverse-engineer them to maintain, migrate, or improve them.
+
+## Example: Disassembling a Binary
+
+Let’s say you have an executable but no source code. A common tool like `Ghidra`, `IDA Pro`, or `x64dbg` can help you disassemble the binary and reveal low-level assembly code.
+
+<CodeBlock
+  marginBottom="16"
+  codes={[
+    {
+      code:
+`; Decompiled Assembly Example
+mov eax, [ebp+arg_0]
+add eax, 1
+mov [ebp+var_4], eax`,
+      language: "asm",
+      label: "Sample Disassembled Code"
+    }
+  ]}
+/>
+
+## Legal and ethical considerations
+
+Reverse engineering lives in a **legal gray area** depending on jurisdiction and purpose. Here’s a rough guideline:
+
+- ✅ Legal for educational or security research
+- 🚫 Illegal if it violates copyright or licensing agreements
+- ⚠️ Always check terms of service and local laws
+
+## Tools for reverse engineering
+
+Here are some widely used tools:
+
+| Tool       | Use Case                |
+|------------|-------------------------|
+| Ghidra     | Free disassembler by NSA |
+| IDA Pro    | Industry-standard static analyzer |
+| x64dbg     | Windows debugger         |
+| Radare2    | Open-source framework    |
+| APKTool    | Android app decompiling  |
+
+## Should you learn reverse engineering?
+
+If you're interested in:
+
+- **Cybersecurity**
+- **Low-level programming**
+- **Reverse-app development**
+- **Hacking and forensics**
+
+…then reverse engineering is a highly valuable skill to add to your toolkit.
+
+---
+
+**Resources:**
+
+- [Ghidra](https://ghidra-sre.org/)
+- [Introduction to Reverse Engineering](https://www.reversinglabs.com/)
+- [Malware Unicorn's RE101 Course](https://malwareunicorn.org/workshops/re101.html)
+

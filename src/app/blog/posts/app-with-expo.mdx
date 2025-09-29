@@ -1,0 +1,99 @@
+---
+title: "Getting Started with App Development Using Expo"
+summary: "Kickstart your mobile app journey using Expo — the fastest way to build cross-platform apps with React Native."
+image: "/images/blogs/expo.png"
+publishedAt: "2025-09-29"
+tag: "App Development"
+---
+
+## Why choose Expo?
+
+If you're new to mobile app development, Expo is one of the easiest ways to get started. It’s a framework and platform built around **React Native**, allowing you to write JavaScript/TypeScript and run your app on both iOS and Android — without configuring Xcode or Android Studio.
+
+## What is Expo?
+
+Expo simplifies the mobile app dev experience by:
+
+- Providing a set of native APIs
+- Eliminating the need to eject for most use cases
+- Offering a fast development cycle with hot reloading
+- Allowing cloud builds and over-the-air updates
+
+## Hello World with Expo
+
+Let’s create your first app step by step.
+
+### 🧱 1. Install Expo CLI
+
+Make sure you have **Node.js** installed, then run:
+
+```bash
+npm install -g expo-cli
+```
+
+### 🚀 2. Create a new Expo app
+
+```bash
+npx create-expo-app hello-world-app
+cd hello-world-app
+npm start
+```
+
+This will launch the Expo Dev Tools in your browser.
+
+### 📱 3. Run the app
+
+Scan the QR code using the [Expo Go](https://expo.dev/client) app on your phone, and you’ll see your new app instantly!
+
+## Sample Code
+
+```
+<CodeBlock
+marginBottom="16"
+codes={[
+{
+code:
+`import { Text, View, StyleSheet } from 'react-native';
+
+export default function App() {
+return (
+<View style={styles.container}>
+<Text>Hello, Expo 👋</Text>
+</View>
+);
+}
+
+const styles = StyleSheet.create({
+container: {
+flex: 1,
+justifyContent: 'center',
+alignItems: 'center',
+},
+});`,
+language: "tsx",
+label: "App.tsx"
+}
+]}
+/>
+```
+## Next steps
+
+Here’s what you can do after your first “Hello World”:
+
+- Add navigation using `react-navigation`
+- Style your app with Tailwind using `nativewind`
+- Fetch data using `axios` or `fetch`
+- Use device features with `expo-camera`, `expo-location`, and more
+
+## Why Expo is beginner-friendly
+
+- ✅ No native setup required
+- ✅ Fast prototyping and sharing
+- ✅ Easy deployment to app stores (with EAS Build)
+- ✅ Built-in support for push notifications, updates, and auth
+
+### Resources:
+
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Docs](https://reactnative.dev/)
+- [NativeWind (Tailwind for React Native)](https://www.nativewind.dev/)

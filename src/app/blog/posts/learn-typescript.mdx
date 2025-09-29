@@ -1,0 +1,95 @@
+---
+title: "Why You Should Learn TypeScript in 2025"
+summary: "TypeScript continues to rise as a must-know tool for JavaScript developers. Here's why it should be your next skill to master."
+image: "/images/blogs/typescript.avif"
+publishedAt: "2025-09-29"
+tag: "Web Development"
+---
+
+## The rise of TypeScript
+
+In 2025, TypeScript is no longer just a “nice to have” — it’s becoming a **requirement** in many modern JavaScript codebases. With growing project complexity, the benefits of static typing are clearer than ever. TypeScript helps developers catch bugs earlier, improve code readability, and build scalable systems.
+
+## What is TypeScript?
+
+TypeScript is a **superset of JavaScript** that adds optional static types. It compiles down to clean, readable JavaScript, meaning you can run it anywhere JS runs — in the browser, in Node.js, and beyond.
+
+<CodeBlock
+  marginBottom="16"
+  codes={[
+    {
+      code:
+`// JavaScript
+function greet(name) {
+  return "Hello, " + name;
+}
+
+// TypeScript
+function greet(name: string): string {
+  return "Hello, " + name;
+}`,
+      language: "ts",
+      label: "JavaScript vs TypeScript"
+    }
+  ]}
+/>
+
+## Benefits of TypeScript
+
+Here’s why TypeScript is worth your time:
+
+- **Early bug detection**: TypeScript spots bugs during development.
+- **Better IDE support**: Autocompletion, inline docs, and refactoring tools.
+- **Improved readability**: Types make the code more understandable for teams.
+- **Scalability**: Crucial for large apps and teams with multiple developers.
+
+## Growing ecosystem
+
+TypeScript is widely adopted across major frameworks and libraries:
+
+- **React + TypeScript**: Improved prop type safety.
+- **Next.js**: TypeScript support out-of-the-box.
+- **Node.js apps**: More maintainable APIs and services.
+
+<CodeBlock
+  marginBottom="16"
+  codes={[
+    {
+      code:
+`type User = {
+  id: number;
+  name: string;
+  email: string;
+};
+
+function getUser(id: number): User {
+  // Fetch and return user
+}`,
+      language: "ts",
+      label: "Typed API response example"
+    }
+  ]}
+/>
+
+## Getting started
+
+To start using TypeScript:
+
+1. Install it globally or locally:  
+   `npm install -D typescript`
+2. Initialize your project:  
+   `npx tsc --init`
+3. Start renaming `.js` files to `.ts` and gradually add types.
+
+## Final thoughts
+
+Whether you're a frontend, backend, or full-stack developer, learning TypeScript in 2025 is a wise investment. It boosts code quality, reduces bugs, and makes you a more confident and capable engineer.
+
+---
+
+**Resources:**
+
+- [TypeScript Official Docs](https://www.typescriptlang.org/)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [tsconfig reference](https://www.typescriptlang.org/tsconfig)
+
