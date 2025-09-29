@@ -106,18 +106,16 @@ const about: About = {
         brother, a son, a friend, a self taught web developer and programmer, an
         open source enthusiasist, an extreme melophile.
         <br /> <br />
-        As my age already suggests, I'm a high school graduate and an undergrad
-        in college pursuing B.Tech (soon). I had already started programming
-        back when I was in 11th standard as we had python in our school
-        curriculum. I started web development one year later and I like working
-        on the web a lot (mostly frontend). Oh, btw - I don't design my web apps
-        😱. If you want to know about what programming languages I know, they
-        are - typescript, python, go and a little bit of ruby and cplusplus.
+        As my age already suggests, I'm pursuing B.Tech in CS. I had already started programming
+        back when I was in 11th standard as we had C++ in our school
+        curriculum. I started web development same year and I like working
+        on the web a lot (mostly frontend). If you want to know about what programming languages I know, they
+        are - typescript, python, go and a little bit of dart and kotlin.
         <br /> <br />
         Things I do other than dev and programming? Not much, but I do play
         football (touching grass is important). I also just like to go on the
         terrace with soft music and watch clouds pass by 😳. I've also started
-        gaming recently (only VALORANT). Apart from these, I don't have much to
+        gaming recently (only APEX LEGENDS). Apart from these, I don't have much to
         do other than overthinking and staring at my phone screen.
         <br /> <br />
         I don't talk much over any platform but I like making friends (be it
@@ -333,3 +331,4 @@ const gallery: Gallery = {
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
+
