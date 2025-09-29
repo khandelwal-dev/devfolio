@@ -34,11 +34,11 @@ export default function About() {
       display: about.intro.display,
       items: [],
     },
-    {
-      title: about.work.title,
-      display: about.work.display,
-      items: about.work.experiences.map((experience) => experience.company),
-    },
+    // {
+    //   title: about.work.title,
+    //   display: about.work.display,
+    //   items: about.work.experiences.map((experience) => experience.company),
+    // },
     {
       title: about.studies.title,
       display: about.studies.display,
@@ -65,7 +65,7 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      {about.tableOfContent.display && (
+      {/* {about.tableOfContent.display && (
         <Column
           left="0"
           style={{ top: "50%", transform: "translateY(-50%)" }}
@@ -76,7 +76,7 @@ export default function About() {
         >
           <TableOfContents structure={structure} about={about} />
         </Column>
-      )}
+      )} */}
       <Row fillWidth s={{ direction: "column"}} horizontal="center">
         {about.avatar.display && (
           <Column
@@ -200,7 +200,7 @@ export default function About() {
             </Column>
           )}
 
-          {about.work.display && (
+          {/* {about.work.display && (
             <>
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
                 {about.work.title}
@@ -257,7 +257,7 @@ export default function About() {
                 ))}
               </Column>
             </>
-          )}
+          )} */}
 
           {about.studies.display && (
             <>
