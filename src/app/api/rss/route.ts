@@ -1,5 +1,5 @@
-import { getPosts } from "@/utils/utils";
-import { baseURL, blog, person } from "@/resources";
+import { getPosts } from "$dev/utils/utils";
+import { baseURL, blog, person } from "$dev/resources";
 import { NextResponse } from "next/server";
 
 export async function GET() {
