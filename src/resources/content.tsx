@@ -9,6 +9,7 @@ import {
   Work,
 } from "$dev/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
+import Link from "next/link";
 
 const person: Person = {
   firstName: "Dev",
@@ -70,7 +71,7 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "/hire-me",
+    href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
@@ -101,13 +102,32 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I'm a student who treats the digital world like a playground. I love
-        taking things apart just to see how they work, and then rebuilding them
-        into something new. Curiosity drives me, and I'm not afraid to push past
-        boundaries most people avoid. From websites and apps to unofficial APIs,
-        I explore, tinker, and create without hesitation. Sometimes I hack,
-        sometimes I build—but every time, I learn. For me, tech isn’t just
-        code—it’s an adventure.
+        I'm Dev, a 19 y/o student belonging to the Homo Sapiens species, a
+        brother, a son, a friend, a self taught web developer and programmer, an
+        open source enthusiasist, an extreme melophile.
+        <br /> <br />
+        As my age already suggests, I'm a high school graduate and an undergrad
+        in college pursuing B.Tech (soon). I had already started programming
+        back when I was in 11th standard as we had python in our school
+        curriculum. I started web development one year later and I like working
+        on the web a lot (mostly frontend). Oh, btw - I don't design my web apps
+        😱. If you want to know about what programming languages I know, they
+        are - typescript, python, go and a little bit of ruby and cplusplus.
+        <br /> <br />
+        Things I do other than dev and programming? Not much, but I do play
+        football (touching grass is important). I also just like to go on the
+        terrace with soft music and watch clouds pass by 😳. I've also started
+        gaming recently (only VALORANT). Apart from these, I don't have much to
+        do other than overthinking and staring at my phone screen.
+        <br /> <br />
+        I don't talk much over any platform but I like making friends (be it
+        online or irl though I'm somewhat introverted!). So, in case you want to
+        talk about anything, just hit me up and I'll get back to you once I'm
+        active/online.
+        <br /> <br />
+        That's pretty much everything I know about me yet. In case you know
+        something about me that I still don't, please let me know - I'll add it
+        here.
       </>
     ),
   },
@@ -313,4 +333,3 @@ const gallery: Gallery = {
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
-
