@@ -23,22 +23,22 @@ export default function LinksPage() {
     },
     {
       label: "LinkedIn",
-      link: "https://linkedin.com/in/yourprofile",
+      link: "https://linkedin.com/in/devkhandelwal",
       desc: "Professional, polished, pretending to be serious.",
     },
     {
       label: "Twitter / X",
-      link: "https://twitter.com/yourusername",
+      link: "https://twitter.com/kkndev",
       desc: "Thoughts, tech, randomness, and late-night dev struggles.",
     },
     {
       label: "Instagram",
-      link: "https://instagram.com/yourusername",
+      link: "https://instagram.com/kkndev",
       desc: "Photos, moments, and the occasional good hair day.",
     },
     {
       label: "Mail",
-      link: "mailto:dev@example.com",
+      link: "mailto:dev-khandelwal@outlook.com",
       desc: "Reach out. I don’t bite (mostly).",
     },
   ];
@@ -199,3 +199,4 @@ export default function LinksPage() {
 //     </main>
 //   );
 // }
+
