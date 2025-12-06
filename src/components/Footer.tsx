@@ -10,20 +10,22 @@ export default function Footer() {
       <p className="text-white/70 text-[15px] leading-relaxed max-w-[600px]">
         Want to reach out?{" "}
         <a
-          href="mailto:dev@example.com"
+          href="mailto:dev-khandelwal@outlook.com"
           className="text-white underline underline-offset-4 hover:text-white/90 transition"
+          target="_blank"
         >
-          dev@example.com
+          dev-khandelwal@outlook.com
         </a>
       </p>
 
       <div className="flex gap-4 mt-4 text-white/40 text-sm">
-        <a href="https://github.com/khandelwal-dev" className="hover:text-white transition">github</a>
+        <a href="https://github.com/khandelwal-dev" target="_blank" className="hover:text-white transition">github</a>
         <span>•</span>
-        <a href="#" className="hover:text-white transition">linkedin</a>
+        <a href="https://linkedin.com/in/devkhandelwal" target="_blank" className="hover:text-white transition">linkedin</a>
       </div>
 
       <p className="text-white/30 text-[13px] mt-10">© Dev {year}</p>
     </footer>
   );
 }
+
