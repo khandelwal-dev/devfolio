@@ -3,6 +3,16 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+::-moz-selection {
+  color: #000;
+  background: #fff;
+}
+
+::selection {
+  color: #000;
+  background: #fff;
+}
+
 html {
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
