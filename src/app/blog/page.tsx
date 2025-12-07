@@ -19,7 +19,10 @@ export default function BlogPage() {
 
   return (
     <section className="text-white">
-      <h1 className="text-[28px] font-semibold tracking-tight mb-8">/blog</h1>
+      <div className="text-xs text-white/40 tracking-widest mb-10">
+        ~/portfolio/blog
+      </div>
+      <h1 className="text-[40px] font-semibold tracking-tight mb-8">Blog</h1>
 
       <div className="flex flex-col gap-10">
         {posts.map((post, i) => (
