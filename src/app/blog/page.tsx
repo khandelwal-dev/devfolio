@@ -1,4 +1,5 @@
-import UnderConstruction from "$dev/components/UnderConstruction";
+import Link from "next/link";
+import { getAllPosts } from "$dev/lib/getPosts";
 
 export const metadata = {
   title: "Blog — Dev Khandelwal",
@@ -13,6 +14,30 @@ export const metadata = {
   },
 };
 
-export default function Blog() {
-  return <UnderConstruction />;
+export default function BlogPage() {
+  const posts = getAllPosts();
+
+  return (
+    <section className="text-white">
+      <h1 className="text-[28px] font-semibold tracking-tight mb-8">/blog</h1>
+
+      <div className="flex flex-col gap-10">
+        {posts.map((post, i) => (
+          <Link key={i} href={`/blog/${post.slug}`} className="group">
+            <h2 className="text-[21px] font-semibold group-hover:text-white transition">
+              {post.title}
+            </h2>
+
+            <p className="text-white/60 text-[14px] mt-1 max-w-[600px]">
+              {post.description}
+            </p>
+
+            <p className="text-white/30 text-[12px] mt-2 tracking-wide">
+              {post.date}
+            </p>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
 }
