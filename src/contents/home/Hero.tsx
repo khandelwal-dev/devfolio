@@ -41,9 +41,15 @@ export default function Hero() {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.15 }}
-        className="text-[60px] md:text-[72px] font-extrabold mt-2 leading-[1.05]"
+        className="text-[60px] md:text-[72px] font-extrabold mt-2 leading-[1.05] flex items-center"
       >
-        I'm <span className="border-b border-white/30 pb-1">Dev</span>
+        I'm&nbsp;<span className="border-b border-white/30 pb-1">Dev</span>
+        &nbsp;
+        <img
+          src={`https://github.com/khandelwal-dev.png`}
+          alt="Avatar"
+          className="w-[70px] aspect-square rounded-full cursor-pointer rotate-45 hover:rotate-0 hover:scale-150 transition-all duration-300"
+        />
       </motion.h1>
 
       <motion.p
