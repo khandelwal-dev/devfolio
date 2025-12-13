@@ -1,3 +1,5 @@
+![Preview](./public/preview.png)
+
 # Dev Khandelwal — Portfolio
 
 Personal portfolio website showcasing my work, projects, and interests as a developer.
