@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <MiniIntro />
       <Skills />
-      <FeaturedProjects />
+      {/* <FeaturedProjects /> */}
       <NowLearning />
     </>
   );
