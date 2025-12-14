@@ -1,9 +1,17 @@
 import { getPinnedRepos } from "$dev/lib/github";
 
+type Project = {
+  title: string;
+  desc?: string | null;
+  tags: string[];
+  link?: string | null;
+  github: string;
+};
+
 export default async function FeaturedProjects() {
   const repos = await getPinnedRepos();
 
-  const projects = repos.map((repo: any) => ({
+  const projects: Project[] = repos.map((repo: any) => ({
     title: repo.name,
     desc: repo.description,
     tags: repo.repositoryTopics.nodes.map((t: any) => t.topic.name),
