@@ -1,9 +1,13 @@
+import NowPlaying from "./spotify/NowPlaying";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="mt-40 mb-16 max-w-[900px] mx-auto px-4">
       <div className="h-px w-full bg-white/10 mb-10" />
+
+      <NowPlaying />
 
       <h2 className="text-[22px] font-semibold tracking-tight mb-3">
         /contact

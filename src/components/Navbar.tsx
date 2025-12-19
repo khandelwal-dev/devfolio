@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   const navLinks = [
     { label: "home", href: "/" },
@@ -14,12 +15,28 @@ export default function Navbar() {
     { label: "projects", href: "/projects" },
     { label: "blog", href: "/blog" },
     { label: "links", href: "/links" },
+    { label: "Spotify", href: "/spotify" },
   ];
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    if (open) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md">
-      <div className="max-w-[900px] mx-auto flex items-center justify-between h-[64px] px-4">
-
+      <div className="max-w-[900px] mx-auto flex items-center justify-between h-16 px-4">
         {/* Logo */}
         <Link href="/" className="font-mono text-[17px] text-white">
           dev<span className="text-white/40">()</span>
@@ -38,7 +55,7 @@ export default function Navbar() {
                 {item.label}
 
                 <span
-                  className={`absolute left-0 -bottom-[4px] h-[1px] bg-white/70 transition-all duration-300 
+                  className={`absolute left-0 -bottom-1 h-px bg-white/70 transition-all duration-300 
                     ${active ? "w-full" : "w-0 group-hover:w-full"}`}
                 />
               </Link>
@@ -47,27 +64,39 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-white/80 text-xl"
-        >
-          ☰
-        </button>
+        <div className="md:hidden" ref={menuRef}>
+          <button
+            onClick={() => {
+              open ? setOpen(false) : setOpen(true);
+            }}
+            className=" text-white/80 text-xl"
+          >
+            {open ? "✕" : "☰"}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
       {open && (
-        <div className="md:hidden bg-black/80 backdrop-blur-lg px-4 pb-4 space-y-3">
-          {navLinks.map((item, i) => (
-            <Link
-              key={i}
-              href={item.href}
-              className="block text-white/70 text-[16px] hover:text-white transition"
-              onClick={() => setOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div
+          ref={menuRef}
+          className="md:hidden fixed right-3 top-16 bg-[#ffffff13] backdrop-blur-md
+                     rounded-2xl py-3 w-[140px] px-5 space-y-2.5"
+        >
+          {navLinks.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className={`block text-[16px] transition
+                  ${active ? "text-white" : "text-white/70 hover:text-white"}`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
       )}
     </nav>
