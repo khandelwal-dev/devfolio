@@ -15,7 +15,7 @@ export default function Navbar() {
     { label: "projects", href: "/projects" },
     { label: "blog", href: "/blog" },
     { label: "links", href: "/links" },
-    { label: "Spotify", href: "/spotify" },
+    { label: "spotify", href: "/spotify" },
   ];
 
   useEffect(() => {
@@ -102,3 +102,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
