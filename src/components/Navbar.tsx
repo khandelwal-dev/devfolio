@@ -15,7 +15,7 @@ export default function Navbar() {
     { label: "projects", href: "/projects" },
     { label: "blog", href: "/blog" },
     { label: "links", href: "/links" },
-    { label: "spotify", href: "/spotify" },
+    { label: "resume", href: "https://drive.google.com/drive/folders/1BpGtq3CHJj4e_ZhZSk2l8GVqQ9F6HlBc" },
   ];
 
   useEffect(() => {
