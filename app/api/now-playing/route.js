@@ -1,60 +1,70 @@
-import { NextResponse } from 'next/server';
-import { getNowPlaying, getLastPlayed, hasSpotifyCreds } from '../../../lib/spotify';
-import { DEMO_TRACK } from '../../../data/mock';
+import { NextResponse } from "next/server";
 
-// Shape returned to the widget, always:
-// { title, artist, album_art, url, progress_ms, duration_ms, is_playing, is_demo }
-//
-// No Spotify creds set (yet)? Falls back to the demo track so the widget
-// still has something to render locally / in preview deploys.
 export async function GET() {
-  if (!hasSpotifyCreds()) {
-    return NextResponse.json(DEMO_TRACK);
-  }
-
   try {
-    // 1. currently playing
-    const nowRes = await getNowPlaying();
-    if (nowRes.status === 200) {
-      const song = await nowRes.json();
-      if (song?.is_playing && song.item) {
-        return NextResponse.json({
-          is_playing: true,
-          is_demo: false,
-          title: song.item.name,
-          artist: song.item.artists.map((a) => a.name).join(', '),
-          album: song.item.album?.name,
-          album_art: song.item.album?.images?.[0]?.url || song.item.album?.images?.[1]?.url || null,
-          url: song.item.external_urls?.spotify,
-          progress_ms: song.progress_ms || 0,
-          duration_ms: song.item.duration_ms || 0,
-        });
-      }
+    const username = process.env.LASTFM_USERNAME;
+    const apiKey = process.env.LASTFM_API_KEY;
+
+    if (!username || !apiKey) {
+      return NextResponse.json(
+        { error: "Missing Last.fm environment variables." },
+        { status: 500 }
+      );
     }
 
-    // 2. nothing playing right now -> most recently played
-    const lastRes = await getLastPlayed();
-    if (lastRes.status === 200) {
-      const data = await lastRes.json();
-      const track = data.items?.[0]?.track;
-      if (track) {
-        return NextResponse.json({
-          is_playing: false,
-          is_demo: false,
-          title: track.name,
-          artist: track.artists.map((a) => a.name).join(', '),
-          album: track.album?.name,
-          album_art: track.album?.images?.[0]?.url || track.album?.images?.[1]?.url || null,
-          url: track.external_urls?.spotify,
-          progress_ms: 0,
-          duration_ms: track.duration_ms || 0,
-        });
+    const res = await fetch(
+      `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`,
+      {
+        next: {
+          revalidate: 10,
+        },
       }
+    );
+
+    if (!res.ok) {
+      return NextResponse.json(
+        { error: "Failed to fetch Last.fm." },
+        { status: res.status }
+      );
     }
-  } catch (e) {
-    // token refresh failed, spotify down, whatever — fail soft to demo
-    console.error('spotify now-playing error:', e.message);
+
+    const data = await res.json();
+
+    const track = data?.recenttracks?.track;
+
+    // Nothing currently playing
+    if (!track || (Array.isArray(track) && track.length === 0)) {
+      return NextResponse.json({
+        nowPlaying: false,
+      });
+    }
+
+    // Last.fm returns an object when playing
+    const song = Array.isArray(track) ? track[0] : track;
+
+    const image =
+      song.image?.find((img) => img.size === "extralarge")?.["#text"] ||
+      song.image?.[song.image.length - 1]?.["#text"] ||
+      "";
+
+    return NextResponse.json({
+      nowPlaying: song["@attr"]?.nowplaying === "true",
+      title: song.name,
+      artist: song.artist?.["#text"] || "",
+      album: song.album?.["#text"] || "",
+      image,
+      url: song.url,
+    });
+  } catch (error) {
+    console.error("Last.fm API Error:", error);
+
+    return NextResponse.json(
+      {
+        error: "Internal Server Error",
+      },
+      {
+        status: 500,
+      }
+    );
   }
-
-  return NextResponse.json(DEMO_TRACK);
 }
