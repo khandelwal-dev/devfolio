@@ -229,7 +229,7 @@ export default function Home() {
               </h3>
             </div>
             <a
-              href="mailto:hello@khandelwaldev.me"
+              href="mailto: dev-khandelwal@outlook.com"
               className="inline-flex items-center justify-center font-mono h-12 px-6 bg-lime text-black hover:bg-limeSoft transition-colors w-full md:w-auto"
             >
               say hi <ArrowRight className="w-4 h-4 ml-1" />
