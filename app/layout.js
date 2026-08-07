@@ -35,10 +35,27 @@ export const metadata = {
   title: 'khandelwal.dev — not the boring kind',
   description:
     'Dev Khandelwal — fresher w/ receipts. AI-first builder, CS undergrad, professionally unserious.',
+
   openGraph: {
     title: 'khandelwal.dev — not the boring kind',
     description:
       'Dev Khandelwal — fresher w/ receipts. AI-first builder, CS undergrad, professionally unserious.',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Dev Khandelwal Portfolio',
+      },
+    ],
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'khandelwal.dev — not the boring kind',
+    description:
+      'Dev Khandelwal — fresher w/ receipts. AI-first builder.',
+    images: ['/opengraph-image.png'],
   },
 };
 
