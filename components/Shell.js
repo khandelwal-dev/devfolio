@@ -48,7 +48,7 @@ export default function Shell({ children }) {
               <Terminal className="w-4 h-4 text-lime" strokeWidth={2.5} />
               <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-lime rounded-full" />
             </div>
-            <span className="font-semibold tracking-tight">khandelwal.dev</span>
+            <span className="font-semibold tracking-tight">khandelwaldev.me</span>
             <span className="hidden sm:inline text-black/40">— not the boring kind</span>
           </Link>
 
