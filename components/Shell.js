@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Terminal, Github, Twitter, Linkedin, Mail, Menu, X } from 'lucide-react';
+import { Terminal, Github, Twitter, Linkedin, Mail, Menu, X, Instagram } from 'lucide-react';
 import SpotifyWidget from './SpotifyWidget';
 
 const NAV = [
@@ -149,6 +149,11 @@ function Footer() {
               <li>
                 <a href="https://twitter.com/kkndev" target="_blank" rel="noreferrer" className="link-swoosh inline-flex items-center gap-1.5">
                   <Twitter className="w-3.5 h-3.5" /> twitter
+                </a>
+              </li>
+<li>
+                <a href="https://instagram.com/kkndev" target="_blank" rel="noreferrer" className="link-swoosh inline-flex items-center gap-1.5">
+                  <Instagram className="w-3.5 h-3.5" /> instagram
                 </a>
               </li>
               <li>
